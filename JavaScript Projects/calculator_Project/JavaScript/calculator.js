@@ -17,7 +17,7 @@ function Input_Digit(digit) {
     // Display_Value to the key that was clicked.
     if (Wait_Second_Operand === true) {
       Calculator.Display_Value = digit;
-      Calculator.Wait_second_Operand = false;
+      Calculator.Wait_Second_Operand = false;
     } else {
     // this overwirites Display_Value if the current value is 0
     // otherwise it adds onto it
@@ -25,11 +25,11 @@ function Input_Digit(digit) {
     }
 }
 // this section handles decimal points
-function Input_Decimal (dot) {
+function Input_Decimal(dot) {
     // this ensures that accidental clicking of the decimal point
     // doenst cause bugs in your operation
-    if (Calculator.Wait_second_Operand === true) return;
-    if (!Calculator.Display_Value.includes (dot)) {
+    if (Calculator.Wait_Second_Operand === true) return;
+    if (!Calculator.Display_Value.includes(dot)) {
     // we are saying that if the display_Value does not contain a decimal point
     // we want to add a decimal point
        Calculator.Display_Value += dot;
@@ -40,11 +40,11 @@ function Input_Decimal (dot) {
 
 // this section handles operators
 function Handle_Operator(next_Operator) {
-    const { First_operand, Display_Value, operator } = Calculator
+    const { First_Operand, Display_Value, operator } = Calculator
     // when an operator key is pressed, we convert the current number
     // displayed on the screen to a number and then store the result in
     // Calculator.First_Operand if it doesnt already exist
-    const Value_of_Input = ParseFloat(Display_Value);
+    const Value_of_Input = parseFloat(Display_Value);
     //checks if an operator already exists and if Wait_Second_Operand is true,
     // then updates the operator and exists from the function
     if (operator && Calculator.Wait_Second_Operand) {
@@ -52,9 +52,9 @@ function Handle_Operator(next_Operator) {
         return;
     }
     if (First_Operand == null) {
-        Calculator.First_operand = Value_of_Input;
+        Calculator.First_Operand = Value_of_Input;
     }   else if (operator) {// checksif an operator already exists}
-        const Value_Now = First_operand || 0;
+        const Value_Now = First_Operand || 0;
         // if operator Already exists, Property lookup is performed for the operator
         // in the Perform_Calculation object and the function that matches the
         // operator is executed
@@ -64,21 +64,21 @@ function Handle_Operator(next_Operator) {
         Calculator.First_Operand = result;
     }
 
-    Calculator.Wait_second_Operand = true;
+    Calculator.Wait_Second_Operand = true;
     Calculator.operator = next_Operator;
 }
 
 const Perform_Calculation = {
-    '/': (First_operand, Second_Operand) =>First_operand / Second_Operand,
-    '*': (First_operand, Second_Operand) =>First_operand * Second_Operand,
-    '+': (First_operand, Second_Operand) =>First_operand + Second_Operand,
-    '-': (First_operand, Second_Operand) =>First_operand - Second_Operand,
-    '=': (First_operand, Second_Operand) =>Second_operand 
+    '/': (First_Operand, Second_Operand) =>First_Operand / Second_Operand,
+    '*': (First_Operand, Second_Operand) =>First_Operand * Second_Operand,
+    '+': (First_Operand, Second_Operand) =>First_Operand + Second_Operand,
+    '-': (First_Operand, Second_Operand) =>First_Operand - Second_Operand,
+    '=': (First_Operand, Second_Operand) =>Second_Operand 
 }; 
 
 function Calculator_Reset() {
     Calculator.Display_Value = '0';
-    Calculator.Display_Operand = null;
+    Calculator.First_Operand = null;
     Calculator.Wait_Second_Operand= false;
     Calculator.operator = null;
 }
@@ -106,7 +106,7 @@ if (target.classList.contains('operator')) {
 }
 
 if (target.classList.contains('decimal')) {
-Input_Decimal(target.Value);
+Input_Decimal(target.value);
 Update_Display();
   return;
 }
@@ -118,7 +118,7 @@ if (target.classList.contains('all-clear')) {
 
 }  
 
-Input_Digit(target.Value);
+Input_Digit(target.value);
 Update_Display();
 
 })
