@@ -22,27 +22,26 @@ $(document).ready(function() {
     $("#3").click(function() {
         $('h1').hide();
     });
+    // Event setup using a convenience method
+    $( "#3" ).click(function() {
+        console.log( "You clicked a paragraph!" );
+    });
+    // Equivalent event setup using the `.on()` method
+    $( "#1" ).on( "click", function() {
+        console.log( "click" );
+    });
+        
+    
+     
+    // Equivalent event setup using the `.on()` method
+    $( "p" ).on( "click", function() {
+        console.log( "click" );
+    });
+
 });
 
-// Event setup using a convenience method
-$( "p" ).click(function() {
-    console.log( "You clicked a paragraph!" );
-});
-// Equivalent event setup using the `.on()` method
-$( "p" ).on( "click", function() {
-    console.log( "click" );
-});
 
-// Instantaneously hide all paragraphs
-$( "p" ).hide();
- 
-// Instantaneously show all divs that have the hidden style class
-$( "div.hidden" ).show();
 
-// Equivalent event setup using the `.on()` method
-$( "p" ).on( "click", function() {
-    console.log( "click" );
-});
 
 
 
