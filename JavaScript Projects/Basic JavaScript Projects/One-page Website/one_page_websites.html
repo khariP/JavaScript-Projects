@@ -6,6 +6,7 @@
 		<title>Way Out In Space | Resort</title>
 	</head>
 	<body>
+		<script>document.body.className += ' fade-out';</script>
 
         <!-- NAV -->
 	
@@ -94,6 +95,9 @@
 		</div>
 		<script src="one_page_website.js>"></script>
 		<!-- END NAV -->
+		$(function() {
+			$('body').removeClass('fade-out');
+		});
         
 	</body>
 </html>

@@ -117,6 +117,14 @@ p {
     user-select: none;
     -webkit-user-select: none;
   }
+  body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
   
   /* Position the "next button" to the right */
   .next {
