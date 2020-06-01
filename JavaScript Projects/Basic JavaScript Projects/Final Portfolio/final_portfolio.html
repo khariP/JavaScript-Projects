@@ -7,19 +7,14 @@
 		<title>Khari Pierce</title>
 		<link rel="stylesheet" type="text/css" href="final_portfolio.css">
 		<script src="final_portfolio.js"></script>
+		
 	</head>
 
 	<!-- Body -->
 <body class="Background"> 
 <!-- Fade in effect -->
-<script> <!--This script and function controls our fade in effect -->
-  document.body.className += ' fade-out';
-    $(function() {
-      $('body').removeClass('fade-out');
-    }
-  );
+<!--This script and function controls our fade in effect -->
 
-</script>
 
 <!-- Navbar -->
 	<div class="Navbar">
@@ -40,7 +35,7 @@
 		
 <!-- Video -->
 		<video autoplay muted loop id="Typing_Video"> <!-- Makes the video play automatically, on a loop and with no sound -->
-			<source src="Stylesheet/Video/Typing.mp4" type="video/mp4">
+			<source src="./img/Typing.mp4" type="video/mp4">
 			Your browser does not support HTML5 video. <!-- Display message if video fails to run -->
 		</video>
 	</div>
@@ -65,67 +60,80 @@
 			</p> 
 	</div>
 
-<!-- Slideshow section -->
-  <div id="Slideshow">
-    <div id="Slideshow_Background"> 
-      <div id="Slideshow_Container">
+	<div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">1 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/IMG_0053.jpg" style="width:20%">
+                            <div class="text">I'm available to assist you on your project!</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">2 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/HTML_CSS_and_JavaScript.jpeg" style="width:50%">
+                            <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">3 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/Python.png" style="width:50%">
+                            <div class="text">the popular programming language Python and</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">4 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/Python.png" style="width:50%">
+                            <div class="text">the Django Framework</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">5 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/C_Sharp_and_Dot_NET.png" style="width:50%">
+                            <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">5 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/Development.jpg" style="width:50%">
+                            <div class="text">jQuery, Bootstrap, and Knockout</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">7 of 8</div>
+                        <img class="Slide_Show_Images" src="./img/SQL_and_Database.jpg" style="width:50%">
+                            <div class="text">back end development, databases, SQL, and working with APIs.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">8 of 8</div>
+                      <img class="Slide_Show_Images" src="./img/Development.jpg" style="width:50%">
+                        <div class="text"> 
+                          <a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+                        </div>
+                  </div>
+
+                  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                
+            </div>
+        <br>
+            
+            <div style="text-align:center">
         
-		<div class="mySlides fade">
-          <div class="Slide_Number">1 / 6</div>
-            <img class="Slide_Show_Images" src="/IMG_0051.jpg" style="width:100%">
-              <div class="text">I'm available to assist you on your project!</div>
-        </div>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
         
-		<div class="mySlides fade">
-          <div class="Slide_Number">2 / 6</div>
-            <img class="Slide_Show_Images" src="/img/HTML_CSS_and_JavaScript.jpeg" style="width:100%">
-              <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+            </div>
         </div>
-
-        <div class="mySlides fade">
-          <div class="Slide_Number">3 / 6</div>
-            <img class="Slide_Show_Images" src="/img/python.jpg" style="width:100%">
-              <div class="text">the popular programming language Python,</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="Slide_Number">4 / 6</div>
-            <img class="Slide_Show_Images" src="/img/C_Sharp_and_Dot_NET.png" style="width:100%">
-              <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
-        </div>
-
-		<div class="mySlides fade">
-	      <div class="Slide_Number">5 / 6</div>
-			<img class="Slide_Show_Images" src="/img/SQL_and_Database.jpg" style="width:100%">
-              <div class="text">back end development, databases and SQL.</div>
-			</div>
-
-		<div class="mySlides fade">
-		  <div class="Slide_Number">6 / 6</div>
-			<img class="Slide_Show_Images" src="/img/Coding_1.jpg" style="width:100%">
-			  <div class="text"> 
-				<a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
-			  </div>
-	    </div>
-	
-		  <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-		  <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-		
-	  </div>
-  <br>
-
-      <div style="text-align:center">
- 
-		<span class="dot" onclick="currentSlide(1)"></span> 
-		<span class="dot" onclick="currentSlide(2)"></span> 
-		<span class="dot" onclick="currentSlide(3)"></span> 
-		<span class="dot" onclick="currentSlide(4)"></span> 
-		<span class="dot" onclick="currentSlide(5)"></span> 
-		<span class="dot" onclick="currentSlide(6)"></span> 
-
-      </div>
     </div>
-  </div>
 
 <!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
   <script>
@@ -157,7 +165,7 @@
 <!-- About section -->
   <div class="Row" id="About"> 
 	<div class="Column_2"> <!-- Left column -->
-	  <img src="img/Development.jpg" alt="Laptop">
+	  <img src="./img/Development.jpg" alt="Laptop">
 	</div>
   
 	<div class="Column_1"> <!-- Right column -->
@@ -175,7 +183,7 @@
 		</div>
 		
 		<div class="Column_2"> <!-- Right column -->
-			<a href="https://github.com//kharip" target="_blank"><img src="img/GitHub.png" alt="GitHub"></a>
+			<a href="https://github.com//kharip" target="_blank"><img src="./img/GitHub.png" alt="GitHub"></a>
 		</div>
 	</div>
 </div>
@@ -204,10 +212,11 @@
 <!-- Footer section -->
 	<footer>
 		<p>
-			<center>&copy Pierce Consulting Inc.,  <a href="https://learncodinganywhere.com/">The Tech Academy</a></center><br>
+			<center>&copy; Prosper Consulting Inc.,   <a href="https://learncodinganywhere.com/">The Tech Academy</a></center><br>
 		</p>
 	</footer>
 
 		</body>
+		
 
 </html>
